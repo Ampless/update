@@ -1,0 +1,12 @@
+name: update
+description: A package for checking for updates.
+
+version: 0.0.1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+
+dev_dependencies:
+  pedantic: any
