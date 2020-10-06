@@ -1,5 +1,6 @@
 name: update
 description: A package for checking for updates.
+homepage: https://github.com/Ampless/update
 
 version: 0.0.1
 
