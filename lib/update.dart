@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:version/version.dart';
+
 class UpdateInfo {
   String version, url;
 
@@ -15,10 +17,9 @@ class UpdateInfo {
         'https://api.github.com/repos/$repo/releases',
       )));
       for (var release in json)
-        if (!release['prerelease'])
-          return currentVersion != release['tag_name']
-              ? UpdateInfo(release['tag_name'], release['html_url'])
-              : null;
+        if (!release['prerelease'] &&
+            Version.parse(currentVersion) < Version.parse(release['tag_name']))
+          return UpdateInfo(release['tag_name'], release['html_url']);
       // ignore: empty_catches
     } catch (e) {}
     return null;
