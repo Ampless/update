@@ -1,13 +1,13 @@
 import 'dart:convert';
 
-import 'package:version/version.dart';
+import 'package:pub_semver/pub_semver.dart';
 
 class UpdateInfo {
   String version, url;
 
   UpdateInfo(this.version, this.url);
 
-  static Future<UpdateInfo> getFromGitHub(
+  static Future<UpdateInfo?> getFromGitHub(
     String repo,
     String currentVersion,
     Future<String> Function(Uri) httpGet,
