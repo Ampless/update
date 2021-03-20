@@ -3,20 +3,23 @@ import 'dart:convert';
 import 'package:pub_semver/pub_semver.dart';
 
 class UpdateInfo {
-  String version, url;
+  final String version, url;
 
   UpdateInfo(this.version, this.url);
 
   static Future<UpdateInfo?> getFromGitHub(
     String repo,
     String currentVersion,
-    Future<String> Function(Uri) httpGet,
+    Future<String> Function(Uri, {bool readCache, bool writeCache}) httpGet,
   ) async {
     try {
-      var json = jsonDecode(await httpGet(Uri.parse(
-        'https://api.github.com/repos/$repo/releases',
-      )));
-      for (var release in json)
+      final json = jsonDecode(await httpGet(
+          Uri.parse(
+            'https://api.github.com/repos/$repo/releases',
+          ),
+          readCache: false,
+          writeCache: false));
+      for (final release in json)
         if (!release['prerelease'] &&
             Version.parse(currentVersion) < Version.parse(release['tag_name']))
           return UpdateInfo(release['tag_name'], release['html_url']);

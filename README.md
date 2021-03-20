@@ -1,2 +1,2 @@
 # update
- A dart package for checking for updates.
+A dart package for checking for updates.

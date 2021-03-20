@@ -2,15 +2,15 @@ name: update
 description: A package for checking for updates.
 homepage: https://github.com/Ampless/update
 
-version: 0.1.1-nullsafety.0
+version: 0.2.0
 
 environment:
-  sdk: ">=2.12.0-0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  pub_semver: ^2.0.0-nullsafety.0
+  pub_semver: ^2.0.0
 
 dev_dependencies:
-  pedantic: ^1.10.0-nullsafety.3
-  test: ^1.16.0-nullsafety.16
-  schttp: ^1.0.0-nullsafety.0
+  pedantic: ^1.11.0
+  test: ^1.16.8
+  schttp: ^1.1.0

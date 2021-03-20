@@ -1,3 +1,8 @@
+## 0.2.0
+
+* Using schttp 1.1.0 it disables caching now
+* Updated just about every dependency
+
 ## 0.1.1-nullsafety.0
 
 * Null safety
