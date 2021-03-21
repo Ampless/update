@@ -10,13 +10,11 @@ class UpdateInfo {
   static Future<UpdateInfo?> getFromGitHub(
     String repo,
     String currentVersion,
-    Future<String> Function(Uri, {bool readCache, bool writeCache}) httpGet,
+    Future<String> Function(String, {bool readCache, bool writeCache}) httpGet,
   ) async {
     try {
       final json = jsonDecode(await httpGet(
-          Uri.parse(
-            'https://api.github.com/repos/$repo/releases',
-          ),
+          'https://api.github.com/repos/$repo/releases',
           readCache: false,
           writeCache: false));
       for (final release in json)

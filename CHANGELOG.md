@@ -1,6 +1,10 @@
+## 0.3.0
+
+* Better API because of schttp 2
+
 ## 0.2.0
 
-* Using schttp 1.1.0 it disables caching now
+* Using schttp 1.1 it disables caching now
 * Updated just about every dependency
 
 ## 0.1.1-nullsafety.0
