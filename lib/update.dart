@@ -14,13 +14,11 @@ class UpdateInfo {
   ) async {
     try {
       final json = jsonDecode(await httpGet(
-          'https://api.github.com/repos/$repo/releases',
+          'https://api.github.com/repos/$repo/releases/latest',
           readCache: false,
           writeCache: false));
-      for (final release in json)
-        if (!release['prerelease'] &&
-            Version.parse(currentVersion) < Version.parse(release['tag_name']))
-          return UpdateInfo(release['tag_name'], release['html_url']);
+      if (Version.parse(currentVersion) < Version.parse(json['tag_name']))
+        return UpdateInfo(json['tag_name'], json['html_url']);
       // ignore: empty_catches
     } catch (e) {}
     return null;

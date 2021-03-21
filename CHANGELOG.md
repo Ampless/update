@@ -1,3 +1,7 @@
+## 0.3.1
+
+* Actually GitHub has a better low-level API, which reduces internet usage
+
 ## 0.3.0
 
 * Better API because of schttp 2
