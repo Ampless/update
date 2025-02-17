@@ -1,3 +1,9 @@
+## 0.4.0
+
+- use tested for testing
+- migrate from pedantic to lints
+- dart 3
+
 ## 0.3.1
 
 * Actually GitHub has a better low-level API, which reduces internet usage
